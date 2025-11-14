@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distribuciones Continuas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- ========================== -->
+<!--  BARRA DE NAVEGACIÓN       -->
+<!-- ========================== -->
+<nav>
+    <div class="menu-nav">
+        <a href="index.html">Inicio</a>
+        <a href="conteo.html">Técnicas de Conteo</a>
+        <a href="discretas.html">Discretas</a>
+        <a href="continuas.html">Continuas</a>
+        <a href="bayes.html">Bayes</a>
+        <a href="probabilidad.html">Probabilidad</a>
+        <a href="probabilidad_condicional.html">Probabilidad Condicional</a>
+        <a href="acerca.html">Acerca de</a>
+    </div>
+</nav>
+
+<!-- ========================== -->
+<!--      HEADER / HERO          -->
+<!-- ========================== -->
+<header>
+    <h1>Distribuciones Continuas</h1>
+    <p class="subtitulo">Exponencial • Normal</p>
+</header>
+
+<main class="contenedor">
+
+    <!-- ====================================================== -->
+    <!--                A) DISTRIBUCIÓN EXPONENCIAL           -->
+    <!-- ====================================================== -->
+    <section class="card grande">
+        <h2>A) Distribución Exponencial</h2>
+
+        <p><strong>Relación con Poisson:</strong>  
+        Si los eventos ocurren con una tasa λ bajo un modelo Poisson,  
+        entonces los tiempos entre eventos siguen una distribución Exponencial(λ).</p>
+
+        <div class="inputs">
+            <label>λ (tasa promedio):</label>
+            <input type="number" id="exp_lam" step="0.01">
+
+            <label>Valor t:</label>
+            <input type="number" id="exp_t" step="0.01">
+
+            <label>Tipo de consulta:</label>
+            <select id="exp_tipo" onchange="mostrarEntreExponencial()">
+                <option value="menor">P(X &lt; t)</option>
+                <option value="mayor">P(X &gt; t)</option>
+                <option value="entre">P(a &lt; X &lt; b)</option>
+            </select>
+
+            <div id="exp_extra" style="display:none;">
+                <label>a:</label>
+                <input type="number" id="exp_a" step="0.01">
+                <label>b:</label>
+                <input type="number" id="exp_b" step="0.01">
+            </div>
+        </div>
+
+        <button class="btn-hero" onclick="calcularExponencial()">Calcular</button>
+        <p id="exp_res" class="resultado"></p>
+    </section>
+
+    <!-- ====================================================== -->
+    <!--                B) DISTRIBUCIÓN NORMAL                -->
+    <!-- ====================================================== -->
+    <section class="card grande">
+        <h2>B) Distribución Normal</h2>
+
+        <p><strong>Propiedades:</strong>  
+        Curva simétrica, forma de campana, área total bajo la curva = 1, media μ, desviación estándar σ.</p>
+
+        <div class="inputs">
+            <label>Media (μ):</label>
+            <input type="number" id="norm_mu" step="0.01">
+
+            <label>Desviación estándar (σ):</label>
+            <input type="number" id="norm_sigma" step="0.01">
+
+            <label>Valor x:</label>
+            <input type="number" id="norm_x" step="0.01">
+
+            <label>Tipo de consulta:</label>
+            <select id="norm_tipo">
+                <option value="menor">P(X &lt; x)</option>
+                <option value="mayor">P(X &gt; x)</option>
+                <option value="entre">P(a &lt; X &lt; b)</option>
+            </select>
+
+            <div id="norm_extra" style="display:none;">
+                <label>a:</label>
+                <input type="number" id="norm_a" step="0.01">
+                <label>b:</label>
+                <input type="number" id="norm_b" step="0.01">
+            </div>
+        </div>
+
+        <button class="btn-hero" onclick="calcularNormal()">Calcular</button>
+        <p id="norm_res" class="resultado"></p>
+    </section>
+
+    <!-- BOTÓN REGRESAR -->
+    <div class="regresar" style="text-align:center; margin-top:2rem;">
+        <a href="index.html" class="btn-hero">← Volver al inicio</a>
+    </div>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

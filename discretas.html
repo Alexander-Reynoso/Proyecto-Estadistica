@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distribuciones de Probabilidad Discretas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<nav>
+    <div class="menu-nav">
+        <a href="index.html">Inicio</a>
+        <a href="conteo.html">Técnicas de Conteo</a>
+        <a href="discretas.html">Discretas</a>
+        <a href="continuas.html">Continuas</a>
+        <a href="bayes.html">Bayes</a>
+        <a href="probabilidad.html">Probabilidad</a>
+        <a href="probabilidad_condicional.html">Probabilidad Condicional</a>
+        <a href="acerca.html">Acerca de</a>
+    </div>
+</nav>
+
+<header>
+    <h1>Distribuciones de Probabilidad Discretas</h1>
+    <p class="subtitulo">Binomial • Binomial Negativa • Poisson</p>
+</header>
+
+<main class="contenedor">
+
+    <!-- ============================= -->
+    <!--      A) BINOMIAL             -->
+    <!-- ============================= -->
+    <section class="card calculo-discreta">
+        <h2>A) Distribución Binomial</h2>
+
+        <h3>Características y condiciones</h3>
+        <ul>
+            <li>Experimento con un número fijo de ensayos <strong>n</strong>.</li>
+            <li>Resultados posibles: éxito o fracaso.</li>
+            <li>Probabilidad de éxito <strong>p</strong> constante.</li>
+            <li>Ensayos independientes.</li>
+        </ul>
+
+        <h3>Cálculo</h3>
+        <label for="bin_n">n (número de ensayos):</label>
+        <input type="number" id="bin_n" placeholder="Ejemplo: 5">
+
+        <label for="bin_p">p (probabilidad de éxito):</label>
+        <input type="number" id="bin_p" step="0.01" placeholder="Ejemplo: 0.6">
+
+        <label for="bin_x">x (número de éxitos):</label>
+        <input type="number" id="bin_x" placeholder="Ejemplo: 3">
+
+        <label for="bin_tipo">Tipo de consulta:</label>
+        <select id="bin_tipo">
+            <option value="exacto">P(X = x) — Exactamente</option>
+            <option value="al_menos">P(X ≥ x) — Al menos</option>
+            <option value="a_lo_sumo">P(X ≤ x) — A lo sumo</option>
+        </select>
+
+        <button class="btn-hero" onclick="calcularBinomial()">Calcular</button>
+
+        <div class="resultado">
+            <p id="bin_res"></p>
+            <p id="bin_interpretacion" class="interpretacion"></p>
+        </div>
+    </section>
+
+    <!-- ============================= -->
+    <!--   B) BINOMIAL NEGATIVA       -->
+    <!-- ============================= -->
+    <section class="card calculo-discreta">
+        <h2>B) Distribución Binomial Negativa</h2>
+
+        <h3>Diferencias con la Binomial Simple</h3>
+        <ul>
+            <li>Binomial: cuenta éxitos en un número fijo de ensayos.</li>
+            <li>Binomial Negativa: cuenta ensayos hasta lograr r éxitos.</li>
+            <li>Variable aleatoria: ensayo donde ocurre el r-ésimo éxito.</li>
+        </ul>
+
+        <h3>Cálculo</h3>
+        <label for="bn_p">p (probabilidad de éxito):</label>
+        <input type="number" id="bn_p" step="0.01" placeholder="Ejemplo: 0.6">
+
+        <label for="bn_r">r (número de éxitos buscados):</label>
+        <input type="number" id="bn_r" placeholder="Ejemplo: 3">
+
+        <label for="bn_k">k (ensayo donde ocurre el r-ésimo éxito):</label>
+        <input type="number" id="bn_k" placeholder="Ejemplo: 5">
+
+        <label for="bn_tipo">Tipo de consulta:</label>
+        <select id="bn_tipo">
+            <option value="exacto">P(K = k) — Exactamente</option>
+            <option value="a_lo_sumo">P(K ≤ k) — A lo sumo</option>
+            <option value="al_menos">P(K ≥ k) — Al menos</option>
+        </select>
+
+        <button class="btn-hero" onclick="calcularBinomialNegativa()">Calcular</button>
+
+        <div class="resultado">
+            <p id="bn_res"></p>
+            <p id="bn_interpretacion" class="interpretacion"></p>
+        </div>
+    </section>
+
+    <!-- ============================= -->
+    <!--        C) POISSON            -->
+    <!-- ============================= -->
+    <section class="card calculo-discreta">
+        <h2>C) Distribución de Poisson</h2>
+
+        <h3>Aplicaciones</h3>
+        <ul>
+            <li>Conteo de sucesos en intervalos de tiempo o espacio.</li>
+            <li>Eventos independientes.</li>
+            <li>Tasa media constante λ.</li>
+        </ul>
+
+        <h3>Cálculo</h3>
+        <label for="po_lam">λ (promedio de ocurrencias):</label>
+        <input type="number" id="po_lam" step="0.01" placeholder="Ejemplo: 4">
+
+        <label for="po_k">k (número de eventos):</label>
+        <input type="number" id="po_k" placeholder="Ejemplo: 2">
+
+        <label for="po_tipo">Tipo de consulta:</label>
+        <select id="po_tipo">
+            <option value="exacto">P(X = k) — Exactamente</option>
+            <option value="menos">P(X < k) — Menos de</option>
+            <option value="mas">P(X > k) — Más de</option>
+        </select>
+
+        <button class="btn-hero" onclick="calcularPoisson()">Calcular</button>
+
+        <div class="resultado">
+            <p id="po_res"></p>
+            <p id="po_interpretacion" class="interpretacion"></p>
+        </div>
+    </section>
+
+    <div class="regresar">
+        <a href="index.html" class="btn-hero">← Regresar a Inicio</a>
+    </div>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

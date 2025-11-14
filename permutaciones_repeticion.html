@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permutaciones con Repetición</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Barra de navegación -->
+    <nav>
+        <div class="menu-nav">
+            <a href="index.html">Inicio</a>
+            <a href="conteo.html">Técnicas de Conteo</a>
+            <a href="discretas.html">Discretas</a>
+            <a href="continuas.html">Continuas</a>
+            <a href="bayes.html">Bayes</a>
+            <a href="probabilidad.html">Probabilidad</a>
+            <a href="probabilidad_condicional.html">Probabilidad Condicional</a>
+            <a href="acerca.html">Acerca de</a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <h1>Permutaciones con Repetición</h1>
+        <p class="subtitulo">Aprende a calcular permutaciones cuando algunos elementos se repiten</p>
+    </header>
+<!-- Proceso de cálculo -->
+        <section class="card calculo-permutaciones-rep">
+            <h2>Calcula tus Permutaciones con Repetición</h2>
+            <div class="inputs">
+                <label for="nTotal">Número total de elementos (n):</label>
+                <input type="number" id="nTotal" placeholder="Ejemplo: 6">
+
+                <label for="repeticiones">Repeticiones (separadas por comas):</label>
+                <input type="text" id="repeticiones" placeholder="Ejemplo: 2,2,2">
+            </div>
+
+            <button class="btn-hero" onclick="calcularPermutacionRepeticion()">Calcular</button>
+
+            <div class="resultado">
+                <p id="resultadoPermRep"></p>
+                <p id="interpretacionPermRep" class="interpretacion"></p>
+            </div>
+        </section>
+    <!-- Contenedor principal -->
+    <main class="contenedor">
+
+        <!-- Teoría -->
+        <section class="card">
+            <h2>¿Qué son las Permutaciones con Repetición?</h2>
+            <p>Las permutaciones con repetición se utilizan cuando un conjunto tiene elementos que se repiten y queremos contar <strong>todas las posibles formas de ordenarlos</strong> considerando esas repeticiones.</p>
+            <p>A diferencia de las permutaciones simples, aquí el orden importa pero las repeticiones reducen el número total de permutaciones posibles.</p>
+            <p>Fórmula general:</p>
+            <p><strong>P = n! / (n₁! × n₂! × n₃! × ... × nk!)</strong></p>
+        </section>
+
+        <!-- Importancia y uso -->
+        <section class="card">
+            <h2>Importancia y Aplicaciones</h2>
+            <p>Estas permutaciones son muy útiles en situaciones como:</p>
+            <ul>
+                <li><strong>Creación de códigos o contraseñas:</strong> cuando algunos caracteres se repiten.</li>
+                <li><strong>Distribución de elementos repetidos:</strong> como cartas iguales, fichas o productos idénticos.</li>
+                <li><strong>Estadística y probabilidad:</strong> calcular posibles resultados de experimentos con elementos repetidos.</li>
+                <li><strong>Juegos y competencias:</strong> determinar el número de órdenes distintos posibles cuando hay elementos idénticos.</li>
+            </ul>
+        </section>
+
+        <!-- Ejemplos -->
+        <section class="card">
+            <h2>Ejemplos prácticos</h2>
+
+            <div class="ejemplo">
+                <h3>Ejemplo 1:</h3>
+                <p>Queremos ordenar las letras de la palabra "MAMA". Aquí la letra A se repite 2 veces y la letra M también 2 veces.</p>
+                <p>P = 4! / (2! × 2!) = 24 / 4 = <strong>6 formas distintas</strong></p>
+            </div>
+
+            <div class="ejemplo">
+                <h3>Ejemplo 2:</h3>
+                <p>Tenemos 6 bolas: 2 rojas, 2 azules y 2 verdes. Queremos saber cuántas maneras distintas podemos ordenarlas.</p>
+                <p>P = 6! / (2! × 2! × 2!) = 720 / 8 = <strong>90 formas</strong></p>
+            </div>
+
+            <div class="ejemplo">
+                <h3>Ejemplo 3:</h3>
+                <p>Se quiere ordenar los caracteres de la contraseña "112233". Cada número se repite 2 veces.</p>
+                <p>P = 6! / (2! × 2! × 2!) = 720 / 8 = <strong>90 combinaciones posibles</strong></p>
+            </div>
+        </section>
+
+        
+
+        <!-- Botón de regresar -->
+        <div class="regresar">
+            <a href="conteo.html" class="btn-hero">← Regresar a Técnicas de Conteo</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Proyecto Final de Estadística © 2025</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Probabilidad</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ========================== -->
+<!--  BARRA DE NAVEGACIÓN       -->
+<!-- ========================== -->
+<nav>
+    <div class="menu-nav">
+        <a href="index.html">Inicio</a>
+        <a href="conteo.html">Técnicas de Conteo</a>
+        <a href="discretas.html">Discretas</a>
+        <a href="continuas.html">Continuas</a>
+        <a href="bayes.html">Bayes</a>
+        <a href="probabilidad.html">Probabilidad</a>
+        <a href="probabilidad_condicional.html">Probabilidad Condicional</a>
+        <a href="acerca.html">Acerca de</a>
+    </div>
+</nav>
+
+<header>
+    <h1>Probabilidad</h1>
+    <p class="subtitulo">Conceptos y Cálculos Básicos</p>
+</header>
+
+<main class="contenedor">
+
+    <!-- A. Concepto de probabilidad -->
+    <section class="card">
+        <h2>Concepto de Probabilidad</h2>
+        <p>La <strong>probabilidad</strong> mide la posibilidad de que ocurra un evento. Se calcula como la razón entre los casos favorables y los casos posibles.</p>
+        <p><strong>Fórmula:</strong> P(A) = Casos favorables / Casos posibles</p>
+
+        <div class="inputs">
+            <label for="favorables">Casos favorables:</label>
+            <input type="number" id="favorables" placeholder="Ejemplo: 3">
+
+            <label for="posibles">Casos posibles:</label>
+            <input type="number" id="posibles" placeholder="Ejemplo: 10">
+        </div>
+
+        <button class="btn-hero" onclick="calcularProbabilidad()">Calcular Probabilidad</button>
+
+        <div class="resultado">
+            <p id="resultadoProb"></p>
+            <p id="interpretacionProb" class="interpretacion"></p>
+        </div>
+    </section>
+
+    <!-- B. Regla de la suma -->
+    <section class="card">
+        <h2>Regla de la Suma</h2>
+        <p>La <strong>regla de la suma</strong> se aplica para calcular la probabilidad de que ocurra uno u otro evento.</p>
+        <p><strong>Fórmula:</strong> P(A ∪ B) = P(A) + P(B) (si son excluyentes)</p>
+
+        <div class="inputs">
+            <label for="probA2">P(A):</label>
+            <input type="number" id="probA2" step="0.01" placeholder="Ejemplo: 0.3">
+
+            <label for="probB2">P(B):</label>
+            <input type="number" id="probB2" step="0.01" placeholder="Ejemplo: 0.4">
+        </div>
+
+        <button class="btn-hero" onclick="calcularSuma()">Calcular P(A ∪ B)</button>
+
+        <div class="resultado">
+            <p id="resultadoSuma"></p>
+            <p id="interpretacionSuma" class="interpretacion"></p>
+        </div>
+    </section>
+
+    <!-- C. Eventos excluyentes -->
+    <section class="card">
+        <h2>Eventos Excluyentes</h2>
+        <p>Dos eventos son <strong>excluyentes</strong> cuando no pueden ocurrir al mismo tiempo. Ejemplo: al lanzar un dado, obtener un número par o impar.</p>
+    </section>
+
+    <!-- D. Eventos no excluyentes -->
+    <section class="card">
+        <h2>Eventos No Excluyentes</h2>
+        <p>Dos eventos son <strong>no excluyentes</strong> si pueden ocurrir simultáneamente. Ejemplo: sacar una carta roja y una figura de una baraja.</p>
+        <p><strong>Fórmula:</strong> P(A ∪ B) = P(A) + P(B) - P(A ∩ B)</p>
+    </section>
+
+    <!-- E. Regla del producto -->
+    <section class="card">
+        <h2>Regla del Producto</h2>
+        <p>Se usa para calcular la probabilidad de que dos eventos ocurran a la vez.</p>
+        <p><strong>Fórmula:</strong> P(A ∩ B) = P(A) × P(B)</p>
+    </section>
+
+    <!-- F. Eventos independientes -->
+    <section class="card">
+        <h2>Eventos Independientes</h2>
+        <p>Dos eventos son <strong>independientes</strong> si el resultado de uno no afecta al otro.</p>
+
+        <div class="inputs">
+            <label for="probA">P(A):</label>
+            <input type="number" id="probA" step="0.01" placeholder="Ejemplo: 0.5">
+
+            <label for="probB">P(B):</label>
+            <input type="number" id="probB" step="0.01" placeholder="Ejemplo: 0.2">
+        </div>
+
+        <button class="btn-hero" onclick="calcularIndependientes()">Calcular P(A ∩ B)</button>
+
+        <div class="resultado">
+            <p id="resultadoInd"></p>
+            <p id="interpretacionInd" class="interpretacion"></p>
+        </div>
+    </section>
+
+    <!-- G. Eventos dependientes -->
+    <section class="card">
+        <h2>Eventos Dependientes</h2>
+        <p>Dos eventos son <strong>dependientes</strong> si la ocurrencia de uno afecta al otro. Ejemplo: sacar dos cartas sin reemplazo.</p>
+        <p><strong>Fórmula:</strong> P(A ∩ B) = P(A) × P(B|A)</p>
+    </section>
+
+    <!-- H. Complemento -->
+    <section class="card">
+        <h2>Complemento de un Evento</h2>
+        <p>El <strong>complemento</strong> de un evento A es el conjunto de resultados en los que A no ocurre.</p>
+        <p><strong>Fórmula:</strong> P(A') = 1 - P(A)</p>
+
+        <div class="inputs">
+            <label for="probComplemento">P(A):</label>
+            <input type="number" id="probComplemento" step="0.01" placeholder="Ejemplo: 0.7">
+        </div>
+
+        <button class="btn-hero" onclick="calcularComplemento()">Calcular P(A')</button>
+
+        <div class="resultado">
+            <p id="resultadoComplemento"></p>
+            <p id="interpretacionComplemento" class="interpretacion"></p>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>Proyecto Final de Estadística © 2025</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

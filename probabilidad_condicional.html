@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Probabilidad Condicional</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<nav>
+    <div class="menu-nav">
+        <a href="index.html">Inicio</a>
+        <a href="conteo.html">Técnicas de Conteo</a>
+        <a href="discretas.html">Discretas</a>
+        <a href="continuas.html">Continuas</a>
+        <a href="bayes.html">Bayes</a>
+        <a href="probabilidad.html">Probabilidad</a>
+        <a href="probabilidad_condicional.html">Probabilidad Condicional</a>
+        <a href="acerca.html">Acerca de</a>
+    </div>
+</nav>
+
+<header>
+    <h1>Probabilidad Condicional</h1>
+</header>
+<section class="card calculo-condicional">
+        <h2>Calculadora de Probabilidad Condicional</h2>
+
+        <div class="inputs">
+            <label for="interseccion">Valor de P(A ∩ B):</label>
+            <input type="number" step="0.01" id="interseccion" placeholder="Ejemplo: 0.15">
+
+            <label for="eventoB">Valor de P(B):</label>
+            <input type="number" step="0.01" id="eventoB" placeholder="Ejemplo: 0.25">
+        </div>
+
+        <button class="btn-hero" onclick="calcularCondicional()">Calcular P(A | B)</button>
+
+        <div class="resultado">
+            <p id="resultadoCondicional"></p>
+            <p id="interpretacionCondicional" class="interpretacion"></p>
+        </div>
+    </section>
+<main class="contenedor">
+
+    <!-- CONCEPTO -->
+    <section class="card">
+        <h2>¿Qué es la probabilidad condicional?</h2>
+        <p>
+            La <strong>probabilidad condicional</strong> indica la probabilidad de que ocurra un evento 
+            A dado que ya ocurrió un evento B. Es fundamental para entender cómo un evento afecta a otro.
+        </p>
+        <p class="formula"><strong>P(A | B) = P(A ∩ B) / P(B)</strong></p>
+        <p><strong>Importancia:</strong> Se usa en análisis de riesgos, estudios estadísticos, inteligencia artificial y en cualquier situación donde los eventos no sean independientes.</p>
+    </section>
+
+    <!-- EJEMPLOS -->
+    <section class="card">
+        <h2>Ejemplos prácticos</h2>
+        <div class="ejemplo">
+            <p>En una clase de 40 estudiantes:</p>
+            <ul>
+                <li>20 aprobaron Matemática</li>
+                <li>25 aprobaron Estadística</li>
+                <li>15 aprobaron ambas</li>
+            </ul>
+            <p>Calcular P(Mat | Est): probabilidad de aprobar Matemática dado que aprobó Estadística.</p>
+            <p class="formula"><strong>P(Mat | Est) = 15 / 25 = 0.60</strong></p>
+            <p><em>Interpretación:</em> Si un estudiante aprobó Estadística, tiene un 60% de probabilidad de haber aprobado Matemática.</p>
+        </div>
+
+        <div class="ejemplo">
+            <p>En una urna con 5 bolas rojas y 3 azules:</p>
+            <p>Si sacamos una bola y es roja, ¿cuál es la probabilidad de que al sacar otra sin reemplazo sea azul?</p>
+            <p class="formula"><strong>P(Az | Ro) = 3 / 7 ≈ 0.4286</strong></p>
+            <p><em>Interpretación:</em> La probabilidad de sacar una azul depende de que la primera fue roja, mostrando dependencia entre los eventos.</p>
+        </div>
+    </section>
+
+  
+    <!-- DEPENDENCIA -->
+    <section class="card">
+        <h2>Eventos Dependientes e Independientes</h2>
+
+        <h3>Eventos Independientes</h3>
+        <p>Dos eventos son <strong>independientes</strong> cuando el resultado de uno no afecta al otro.</p>
+        <p class="formula">P(A ∩ B) = P(A) · P(B)</p>
+
+        <hr>
+
+        <h3>Eventos Dependientes</h3>
+        <p>Son <strong>dependientes</strong> cuando el resultado de un evento afecta al otro.</p>
+        <p class="formula">P(A ∩ B) = P(A) · P(B | A)</p>
+    </section>
+
+    <div class="regresar">
+        <a href="index.html" class="btn-hero">← Regresar al Inicio</a>
+    </div>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

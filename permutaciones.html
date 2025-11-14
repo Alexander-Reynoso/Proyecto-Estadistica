@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permutaciones</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+      <nav>
+
+    <div class="menu-nav">
+        <a href="index.html">Inicio</a>
+        <a href="conteo.html">Técnicas de Conteo</a>
+        <a href="discretas.html">Discretas</a>
+        <a href="continuas.html">Continuas</a>
+        <a href="bayes.html">Bayes</a>
+        <a href="probabilidad.html">Probabilidad</a>
+        <a href="probabilidad_condicional.html">Probabilidad Condicional</a>
+        <a href="acerca.html">Acerca de</a>
+    </div>
+</nav>
+    <!-- Header -->
+    <header>
+        <h1>Calculadora de Permutaciones</h1>
+        <p class="subtitulo">Aprende a calcular permutaciones paso a paso y comprende su importancia</p>
+    </header>
+ <section class="card calculo-permutaciones">
+    <h2>Calcula tus Permutaciones</h2>
+    <div class="inputs">
+        <label for="nPerm">Valor de n (total de elementos):</label>
+        <input type="number" id="nPerm" placeholder="Ejemplo: 5">
+
+        <label for="rPerm">Valor de r (elementos a ordenar):</label>
+        <input type="number" id="rPerm" placeholder="Ejemplo: 3">
+    </div>
+
+    <button class="btn-hero" onclick="calcularPermutacion()">Calcular Permutaciones</button>
+
+    <div class="resultado">
+        <p id="resultadoPerm"></p>
+        <p id="interpretacionPerm" class="interpretacion"></p>
+    </div>
+        </section>
+
+     
+    <!-- Contenedor principal -->
+    <main class="contenedor">
+
+        <!-- Descripción general -->
+        <section class="card">
+            <h2>¿Qué son las Permutaciones?</h2>
+            <p>Las permutaciones son un concepto de la combinatoria que nos permite determinar <strong>todas las posibles formas de ordenar un conjunto de elementos</strong> cuando el orden importa.</p>
+            <p>Se diferencian de las combinaciones porque, en las permutaciones, el orden de los elementos sí influye en el resultado. Por ejemplo, "ABC" y "CAB" son permutaciones diferentes de los mismos elementos.</p>
+            <p>Fórmula general de las permutaciones:</p>
+            <p><strong>P(n, r) = n! / (n - r)!</strong></p>
+        </section>
+
+        <!-- Importancia y uso -->
+        <section class="card">
+            <h2>Importancia y Aplicaciones</h2>
+            <p>Las permutaciones son muy útiles en la vida real y en distintas áreas como:</p>
+            <ul>
+                <li><strong>Organización de horarios:</strong> calcular distintas maneras de organizar turnos o actividades.</li>
+                <li><strong>Seguridad informática:</strong> generar contraseñas o códigos únicos.</li>
+                <li><strong>Juegos y competencias:</strong> determinar el orden posible de jugadores o posiciones.</li>
+                <li><strong>Estadística y probabilidad:</strong> calcular eventos posibles en experimentos donde el orden importa.</li>
+            </ul>
+        </section>
+
+        <!-- Ejemplos -->
+        <section class="card">
+            <h2>Ejemplos prácticos</h2>
+
+            <div class="ejemplo">
+                <h3>Ejemplo 1:</h3>
+                <p>Tenemos 5 libros diferentes y queremos ordenarlos en 3 posiciones. ¿Cuántas formas podemos hacerlo?</p>
+                <p>P(5, 3) = 5! / (5-3)! = 120 / 2 = <strong>60 formas</strong></p>
+            </div>
+
+            <div class="ejemplo">
+                <h3>Ejemplo 2:</h3>
+                <p>Se quiere seleccionar 2 personas de un equipo de 4 para ocupar cargos distintos.</p>
+                <p>P(4, 2) = 4! / (4-2)! = 24 / 2 = <strong>12 formas</strong></p>
+            </div>
+
+            <div class="ejemplo">
+                <h3>Ejemplo 3:</h3>
+                <p>En una carrera participan 6 corredores y se quiere saber cuántas maneras diferentes se pueden asignar los tres primeros lugares.</p>
+                <p>P(6, 3) = 6! / (6-3)! = 720 / 6 = <strong>120 formas</strong></p>
+            </div>
+        </section>
+    </main>
+   <!-- Botón de regresar -->
+        <div class="regresar">
+            <a href="conteo.html" class="btn-hero">← Regresar a Técnicas de Conteo</a>
+        </div>
+    <!-- Footer -->
+    <footer>
+        <p>Proyecto Final de Estadística © 2025</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

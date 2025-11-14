@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teorema de Bayes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<nav>
+    <div class="menu-nav">
+        <a href="index.html">Inicio</a>
+        <a href="conteo.html">Técnicas de Conteo</a>
+        <a href="discretas.html">Discretas</a>
+        <a href="continuas.html">Continuas</a>
+        <a href="bayes.html">Bayes</a>
+        <a href="probabilidad.html">Probabilidad</a>
+        <a href="probabilidad_condicional.html">Probabilidad Condicional</a>
+        <a href="acerca.html">Acerca de</a>
+    </div>
+</nav>
+
+<header>
+    <h1>Teorema de Bayes</h1>
+    <p class="subtitulo">Probabilidad Condicional Inversa</p>
+</header>
+<!-- CALCULADORA -->
+    <section class="card calculo-bayes">
+        <h2>Calculadora del Teorema de Bayes</h2>
+
+        <div class="inputs">
+            <label for="pA">P(A):</label>
+            <input type="number" id="pA" step="0.01" placeholder="Ejemplo: 0.3">
+
+            <label for="pBgivenA">P(B|A):</label>
+            <input type="number" id="pBgivenA" step="0.01" placeholder="Ejemplo: 0.9">
+
+            <label for="pBgivenNotA">P(B|¬A):</label>
+            <input type="number" id="pBgivenNotA" step="0.01" placeholder="Ejemplo: 0.2">
+        </div>
+
+        <button class="btn-hero" onclick="calcularBayes()">Calcular Bayes</button>
+
+        <div class="resultado">
+            <p id="resultadoBayes"></p>
+            <p id="interpretacionBayes" class="interpretacion"></p>
+        </div>
+    </section>
+<main class="contenedor">
+
+    <!-- CONCEPTO -->
+    <section class="card">
+        <h2>¿Qué es el Teorema de Bayes?</h2>
+        <p>
+            El <strong>Teorema de Bayes</strong> permite actualizar la probabilidad de un evento 
+            <strong>A</strong> con base en nueva información sobre otro evento <strong>B</strong>.
+        </p>
+        <p><strong>Fórmula:</strong></p>
+        <p style="font-size: 1.2rem; font-weight: bold; text-align:center;">
+            P(A|B) = [ P(B|A) · P(A) ] / P(B)
+        </p>
+        <p>Donde <strong>P(B)</strong> se calcula como:</p>
+        <p style="text-align:center;"><b>P(B) = P(B|A)·P(A) + P(B|¬A)·(1 - P(A))</b></p>
+        <p><strong>Importancia:</strong> Es clave en diagnóstico médico, machine learning, estadística y análisis de riesgo, donde la información adicional cambia nuestra estimación de probabilidades.</p>
+    </section>
+
+    <!-- EJEMPLOS -->
+    <section class="card">
+        <h2>Ejemplos prácticos</h2>
+
+        <div class="ejemplo">
+            <p>Un test detecta una enfermedad con 90% de acierto. La probabilidad de que una persona tenga la enfermedad es 0.3 y de que no la tenga es 0.7.</p>
+            <p>Si el test resulta positivo, calcular la probabilidad de que realmente tenga la enfermedad:</p>
+            <p class="formula">P(Enfermo | Test+) = [0.9 * 0.3] / [0.9*0.3 + 0.2*0.7] ≈ 0.66</p>
+            <p><em>Interpretación:</em> Aunque el test es bastante confiable, la probabilidad de estar enfermo dado un resultado positivo es de aproximadamente 66%.</p>
+        </div>
+    </section>
+
+    
+
+    <div class="regresar">
+        <a href="index.html" class="btn-hero">← Regresar al Inicio</a>
+    </div>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

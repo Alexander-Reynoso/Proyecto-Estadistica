@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combinaciones</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Barra de navegación -->
+    <nav>
+
+    <div class="menu-nav">
+        <a href="index.html">Inicio</a>
+        <a href="conteo.html">Técnicas de Conteo</a>
+        <a href="discretas.html">Discretas</a>
+        <a href="continuas.html">Continuas</a>
+        <a href="bayes.html">Bayes</a>
+        <a href="probabilidad.html">Probabilidad</a>
+        <a href="probabilidad_condicional.html">Probabilidad Condicional</a>
+        <a href="acerca.html">Acerca de</a>
+    </div>
+</nav>
+
+    <!-- Header -->
+    <header>
+        <h1>Calculadora de Combinaciones</h1>
+        <p class="subtitulo">Aprende a calcular combinaciones cuando el orden no importa</p>
+    </header>
+ <!-- Cálculo interactivo -->
+        <section class="card calculo-combinaciones">
+            <h2>Calcula tus Combinaciones</h2>
+            <div class="inputs">
+                <label for="nComb">Número total de elementos (n):</label>
+                <input type="number" id="nComb" placeholder="Ejemplo: 5">
+
+                <label for="rComb">Número de elementos elegidos (r):</label>
+                <input type="number" id="rComb" placeholder="Ejemplo: 3">
+            </div>
+
+            <button class="btn-hero" onclick="calcularCombinacion()">Calcular Combinaciones</button>
+
+            <div class="resultado">
+                <p id="resultadoComb"></p>
+                <p id="interpretacionComb" class="interpretacion"></p>
+            </div>
+        </section>
+
+    <!-- Contenedor principal -->
+    <main class="contenedor">
+
+        <!-- Teoría -->
+        <section class="card">
+            <h2>¿Qué son las Combinaciones?</h2>
+            <p>Las combinaciones son formas de seleccionar elementos de un conjunto cuando el orden <strong>no importa</strong>. A diferencia de las permutaciones, aquí solo importa quién está en el grupo, no en qué posición.</p>
+            <p>Fórmula general:</p>
+            <p><strong>C(n, r) = n! / [r! × (n - r)!]</strong></p>
+        </section>
+
+        <!-- Importancia y aplicaciones -->
+        <section class="card">
+            <h2>Importancia y Aplicaciones</h2>
+            <ul>
+                <li><strong>Elección de comités o equipos:</strong> seleccionar personas sin importar el orden.</li>
+                <li><strong>Juegos y sorteos:</strong> calcular combinaciones posibles de cartas, boletos o fichas.</li>
+                <li><strong>Probabilidad:</strong> analizar experimentos donde solo importa la selección, no el orden.</li>
+                <li><strong>Estadística:</strong> calcular posibles subconjuntos de datos para muestreos.</li>
+            </ul>
+        </section>
+
+        <!-- Ejemplos -->
+        <section class="card">
+            <h2>Ejemplos prácticos</h2>
+
+            <div class="ejemplo">
+                <h3>Ejemplo 1:</h3>
+                <p>Seleccionamos 3 estudiantes de un grupo de 5 para formar un comité.</p>
+                <p>C(5, 3) = 5! / (3! × 2!) = 120 / 12 = <strong>10 combinaciones</strong></p>
+            </div>
+
+            <div class="ejemplo">
+                <h3>Ejemplo 2:</h3>
+                <p>Se quiere elegir 2 cartas de un conjunto de 4 cartas diferentes.</p>
+                <p>C(4, 2) = 4! / (2! × 2!) = 24 / 4 = <strong>6 combinaciones</strong></p>
+            </div>
+
+            <div class="ejemplo">
+                <h3>Ejemplo 3:</h3>
+                <p>Elegir 3 frutas de un conjunto de 6 frutas diferentes.</p>
+                <p>C(6, 3) = 6! / (3! × 3!) = 720 / 36 = <strong>20 combinaciones</strong></p>
+            </div>
+        </section>
+
+       
+        <!-- Botón de regresar -->
+        <div class="regresar">
+            <a href="conteo.html" class="btn-hero">← Regresar a Técnicas de Conteo</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 | Proyecto Final de Estadística I</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
